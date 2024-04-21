@@ -2,4 +2,4 @@ OBI, Maratona e Entrevistas
 GEEM
 
 
-Minhas resoluções
+Por Vinicius Rodrigues, em C++
