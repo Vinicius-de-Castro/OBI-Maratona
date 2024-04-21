@@ -1,0 +1,3 @@
+C:/Users/PC/Desktop/Coisas de Dev/Git/OBI-Maratona/cmake-build-debug/CMakeFiles/OBI_Maratona.dir
+C:/Users/PC/Desktop/Coisas de Dev/Git/OBI-Maratona/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/PC/Desktop/Coisas de Dev/Git/OBI-Maratona/cmake-build-debug/CMakeFiles/rebuild_cache.dir
