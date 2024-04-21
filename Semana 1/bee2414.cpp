@@ -4,12 +4,12 @@ using namespace std;
  
 int main() {
  
-    int temp, maior = 0;
+    int temp = 1, maior = 0;
     while (temp != 0){
         cin >> temp;
         if (temp > maior) maior = temp;
     }
-    cout << temp << endl;
+    cout << maior << endl;
  
     return 0;
 }
