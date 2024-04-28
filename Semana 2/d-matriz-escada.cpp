@@ -18,19 +18,13 @@ int main(){
     int start = 0;
     for (int i = 0; i < n; i++){
         if (!escada) break;
-        for (int j = start; j < m; j++){
-            if (matriz[i][j] == 0) continue;
-            else {
-                for (int k = i; k < n; k++){
-                    if (matriz[k][j] != 0) {
-                        escada = false;
-                        break;
-                    }
-                    else if ((k = n - 1) && matriz[k][j] == 0) {
-                        start++;
-                        break;
-                    }
-                }
+        int j = 0;
+        while (matriz[i][j] == 0 && j < m) j++;
+        j--;
+        for (int k = i + 1; k < n; k++){
+            if (matriz[k][j] != 0) {
+                escada = false;
+                break;
             }
         }
     }
