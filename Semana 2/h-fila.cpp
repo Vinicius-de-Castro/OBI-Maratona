@@ -8,8 +8,8 @@ bool bsr(vector<int> &vec, int x, int start, int end){
     if (start > end) return false;
     int mid = (start+end)/2;
     if (vec[mid] == x) return true;
-    else if (vec[mid] > x) bsr(vec, x, mid+1, end);
-    else bsr(vec, x, start, mid-1);
+    else if (vec[mid] < x) return bsr(vec, x, mid+1, end);
+    else return bsr(vec, x, start, mid-1);
     
 }
 

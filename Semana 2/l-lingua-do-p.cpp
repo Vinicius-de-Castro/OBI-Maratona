@@ -7,15 +7,14 @@ int main(){
     string mensagem;
     getline(cin, mensagem);
     int chars = mensagem.size();
+    int impar = 1;
     
     for (int i = 0; i < chars; i++){
-        if (((mensagem[i] != 'p') || 
-            ((i > 0) && 
-            (i < chars - 1) && 
-            ((mensagem[i-1] == 'p') && 
-            (mensagem[i+1] == 'p')))) ||
-            (mensagem[i-1] == 'p' && mensagem[i] == 'p' && mensagem[i+1] == ' ')
-            ) cout << mensagem[i];
+        if (i % 2 == impar || mensagem[i] == ' ') cout << mensagem[i];
+        if (mensagem[i] == ' '){
+            if (impar == 1) impar = 0;
+            else impar = 1;
+        }
     }
     cout << endl;
 

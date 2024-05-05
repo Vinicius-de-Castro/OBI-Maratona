@@ -2,14 +2,33 @@
  
 using namespace std;
  
-struct Node{
-    int data;
-    struct Node* next;
+struct node{
+
+    int val;
+    node *child;
 };
 
-void insertAtFront(Node** headRef, int newData){
-    
+node *top;
+
+void push(int x){
+    node *n = new node;
+    n -> val = x;
+    n -> child = top;
+    top = n;
 }
+
+void pop(){
+    if (top == NULL) return;
+    node *n = top -> child;
+    delete top;
+    top = n;
+}
+
+int top(){
+    if (top == NULL) return -1;
+    return top -> value;
+}
+
 
 int main() {
  
