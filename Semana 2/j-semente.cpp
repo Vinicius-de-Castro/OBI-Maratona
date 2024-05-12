@@ -7,6 +7,7 @@ int main(){
 
     vector<int> papel;
     int f, r, aux, dias = 0, gotas;
+    bool espalhou;
 
     cin >> f >> r;
 
@@ -20,6 +21,8 @@ int main(){
     }
 
     while (gotas < f){
+        for (int i : papel) cout << i;
+        cout << endl;
         if (papel[0] == 1 && papel[1] == 0 && f > 1){
             papel[1] = 1;
             gotas++;
@@ -29,6 +32,7 @@ int main(){
             gotas++;
         }
         for (int i = 1; i < (f - 1); i++){
+            espalhou =  false;
             if (papel[i] == 1 && papel[i-1] == 0){
                 papel[i-1] = 1;
                 gotas++;
@@ -36,7 +40,9 @@ int main(){
             if (papel[i] == 1 && papel[i+1] == 0){
                 papel[i+1] = 1;
                 gotas++;
+                espalhou = true;
             }
+            if (espalhou) i++;
         }
         dias++;
     }

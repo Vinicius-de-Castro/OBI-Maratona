@@ -20,11 +20,23 @@ int main(){
         if (!escada) break;
         int j = 0;
         while (matriz[i][j] == 0 && j < m) j++;
-        j--;
-        for (int k = i + 1; k < n; k++){
-            if (matriz[k][j] != 0) {
-                escada = false;
-                break;
+        if (j == (m - 1) && i < (n - 1) && matriz[i][j] == 0){
+            for (int a = (i + 1); a < n; a++){
+                if (!escada) break;
+                for (int b = 0; b < m; b++){
+                    if (matriz[a][b] != 0) {
+                        escada = false;
+                        break;
+                    }
+                }
+            }
+        }
+        else {
+            for (int k = i + 1; k < n; k++){
+                if (matriz[k][j] != 0) {
+                    escada = false;
+                    break;
+                }
             }
         }
     }
