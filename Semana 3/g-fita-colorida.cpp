@@ -1,5 +1,4 @@
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -22,15 +21,14 @@ int main(){
                 j--;
                 passosE++;
             }
-            if (j == -1) passosE = 1001;
+            if (j == -1) passosE = 10001;
             while (k < n){
                 if (fita[k] == 0) break;
                 k++;
                 passosD++;
             }
-            if (k == n) passosD = 1001;
-            if (j != -1 && passosE <= passosD) fita[i] = passosE;
-            if (k != n && passosE >= passosD) fita[i] = passosD;
+            if (k == n) passosD = 10001;
+            fita[i] = min(min(passosD, passosE), 9);
         }
     }
 
