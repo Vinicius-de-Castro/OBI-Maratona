@@ -12,18 +12,20 @@ int main(){
     cin >> carac;
     getline(cin, texto);
 
-    int len = texto.size();
+    int len = texto.length();
     string aux;
 
-    for (int i = 0; i < len; i++){
-        if (texto[i] == ' '){
+    for (char c : texto){
+        if (c == ' '){
             palavras.push_back(aux);
             aux = "";
         }
-        else aux += texto[i];
+        else aux.push_back(c);
     }
     
+    float tamanho = palavras.size();
     for (string s : palavras){
+        cout << s << endl;
         for (char c : s){
             if (c == carac){
                 comCarac++;
@@ -32,7 +34,9 @@ int main(){
         }
     }
 
-    cout << setprecision(2) << ((float)(carac/len)*100.0);
+    float porcentagem = ((float)comCarac/(float)tamanho) * 100.0;
+
+    cout << setprecision(2) << porcentagem;
 
     return 0;
 }
