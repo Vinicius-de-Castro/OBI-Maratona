@@ -9,7 +9,6 @@ int main(){
     stack<char> chaves;
 
     cin >> n;
-    n++;
     while(n--){
         cin >> aux;
         for(char c : aux){
