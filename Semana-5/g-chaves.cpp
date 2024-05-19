@@ -9,8 +9,8 @@ int main(){
     stack<char> chaves;
 
     cin >> n;
-    while(n--){
-        cin >> aux;
+    for (int i = 0; i <= n; i++){
+        getline(cin, aux);
         for(char c : aux){
             if (c == '{') chaves.push(c);
             else if (c == '}'){
