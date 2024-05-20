@@ -1,25 +1,24 @@
-#include <bits/stdc++.h>
-
-using namespace std;
+#include <stdio.h>
 
 int main(){
     
-    int n;
-    string aux;
-    stack<char> chaves;
+    int n, count = 0;
+    char aux;
 
-    cin >> n;
-    for (int i = 0; i <= n; i++){
-        getline(cin, aux);
-        for(char c : aux){
-            if (c == '{') chaves.push(c);
-            else if (c == '}'){
-                if (chaves.top() == '{') chaves.pop();
-                else chaves.push(c);
+    scanf("%d", &n);
+    while ((aux = getchar()) != EOF) {
+        if (aux == '{') {
+            count++;
+        }
+        else if (aux == '}'){
+            if (count <= 0){
+                printf("%c", 'N');
+                return 0;
             }
+            count--;
         }
     }
-    cout << (chaves.empty() ? "S" : "N");
+    printf("%c", count ? 'N' : 'S');
 
     return 0;
 }
