@@ -15,20 +15,15 @@ int main(){
         x--;
         y--;
         voos[x][y] = 1;
-        voos[i][i] = 1;
     }
 
     for (int i = 0; i < n; i++){
-        if (voos[i][0] == 1){
-            int j = 1;
-            while (j < n && !existe){
-                if (voos[i][j] == 0) 
-                    break;         
-                if (j = n-1 && voos[i][j] == 1) 
-                    existe = true;
-                j++;
-            }
+        int j;
+        for (j = 0; j < n; j++){
+            if (i == j) continue;
+            if (voos[i][j] == 0) break;
         }
+        if (j == n) existe = true;
     }
 
     cout << (existe ? "S" : "N");
